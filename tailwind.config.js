@@ -2,8 +2,9 @@
     module.exports = {
       
       content: [
-        "/node_modules/flowbite/**/*.js",
-        "./**/*.{html,js}"],
+        "./**/*.{html,js}",
+        "!./node_modules/**/*", // Exclude node_modules directory
+      ],
       theme: {
         extend: {},
       },
