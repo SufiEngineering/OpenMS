@@ -1,0 +1,60 @@
+/* =========================================================================
+ * OpenMS — Application styles (plain CSS; Tailwind utilities come from CDN)
+ * These component classes are written as plain CSS so they work on every
+ * page without relying on the Tailwind Play CDN's @apply processing.
+ * ========================================================================= */
+
+:root { --bg: #0f172a; }
+body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #0f172a; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Animations */
+@keyframes slidein { 0% { transform: translateX(20px); opacity: 0; } 100% { transform: translateX(0); opacity: 1; } }
+@keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; } }
+.anim-slidein { animation: slidein .2s ease; }
+.anim-fadein { animation: fadein .2s ease; }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: .5rem; padding: .5rem .875rem; border-radius: .5rem; font-size: .875rem; font-weight: 500; line-height: 1.25rem; transition: background-color .15s, color .15s, border-color .15s; cursor: pointer; border: none; }
+.btn-primary { background: #4f46e5; color: #fff; }
+.btn-primary:hover { background: #6366f1; }
+.btn-ghost { background: #334155; color: #e2e8f0; }
+.btn-ghost:hover { background: #475569; }
+.btn-danger { background: #e11d48; color: #fff; }
+.btn-danger:hover { background: #f43f5e; }
+.btn-soft { background: #1e293b; color: #cbd5e1; border: 1px solid #334155; }
+.btn-soft:hover { background: #334155; }
+
+/* Form inputs */
+.form-input { width: 100%; background: #0f172a; border: 1px solid #334155; color: #e2e8f0; border-radius: .5rem; padding: .5rem .7rem; font-size: .875rem; outline: none; transition: border-color .15s, box-shadow .15s; }
+.form-input:focus { border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99, 102, 241, .15); }
+.form-input::placeholder { color: #64748b; }
+select.form-input { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%2394a3b8' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right .6rem center; padding-right: 2rem; }
+
+/* Cards & tables */
+.card { background: rgba(30, 41, 59, .6); border: 1px solid rgba(51, 65, 85, .7); border-radius: .75rem; }
+table.data { width: 100%; font-size: .875rem; text-align: left; border-collapse: collapse; }
+table.data thead th { padding: .75rem 1rem; font-size: .7rem; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; color: #94a3b8; border-bottom: 1px solid #334155; background: rgba(30, 41, 59, .9); position: sticky; top: 0; z-index: 1; }
+table.data tbody td { padding: .75rem 1rem; border-bottom: 1px solid rgba(51, 65, 85, .5); color: #e2e8f0; }
+table.data tbody tr:hover { background: rgba(51, 65, 85, .3); }
+
+/* Navigation */
+.nav-link { display: flex; align-items: center; gap: .75rem; padding: .5rem .75rem; border-radius: .5rem; font-size: .875rem; color: #94a3b8; transition: background-color .15s, color .15s; cursor: pointer; text-decoration: none; }
+.nav-link:hover { color: #f1f5f9; background: rgba(51, 65, 85, .5); }
+.nav-link.active { background: rgba(79, 70, 229, .2); color: #a5b4fc; font-weight: 500; }
+.nav-section { padding: 1rem .75rem .25rem; font-size: .625rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: #475569; }
+.icon-btn { padding: .375rem; border-radius: .375rem; color: #94a3b8; background: transparent; border: none; cursor: pointer; transition: background-color .15s, color .15s; }
+.icon-btn:hover { background: #334155; color: #f1f5f9; }
+
+/* Chart sizing — keep canvases inside a fixed-height box so Chart.js
+   (responsive + maintainAspectRatio:false) doesn't collapse or grow. */
+.chart-box { position: relative; width: 100%; }
+.chart-box > canvas { position: absolute; inset: 0; }
+
+/* Utility */
+.hidden { display: none; }
